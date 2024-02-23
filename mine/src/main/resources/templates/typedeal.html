@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Deal Type Selection</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<h1>Выберите тип сделки</h1>
+<img th:src="@{/images/demospring.png}"/>
+<form method="post" action="/selectdeal">
+    <select name="dealTypeId" class='select-box'>
+        <option th:each="dealType : ${dealTypes}" th:value="${dealType.id}" th:text="${dealType.type}"></option>
+    </select>
+    <button type="submit" class="button" >Выбрать</button>
+    <a href="/allTypes" class="button">Редактировать</a>
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
